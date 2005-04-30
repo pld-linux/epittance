@@ -4,7 +4,7 @@ Version:	0.3.0
 Release:	0.1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://dl.sourceforge.net//elysium-project/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/elysium-project/%{name}-%{version}.tar.gz
 # Source0-md5:	364e7f59ed0c104b33f9d0e25222962e
 URL:		http://elysium-project.sourceforge.net/epittance/
 BuildRequires:	howl-devel
