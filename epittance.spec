@@ -1,4 +1,5 @@
 Summary:	An integrated file sharing solution for the GNOME Desktop
+Summary(pl):	Zintegrowane rozwi±zanie do wspó³dzielenia plików dla ¶rodowiska GNOME
 Name:		epittance
 Version:	0.3.0
 Release:	0.1
@@ -15,6 +16,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 An integrated file sharing solution for the GNOME Desktop. It uses WebDAV
 and Rendezvous.
+
+%description -l pl
+Zintegrowane rozwi±zanie do wspó³dzielenia plików dla ¶rodowiska
+GNOME. U¿ywa WebDAV oraz Rendezvous.
 
 %prep
 %setup -q
