@@ -14,8 +14,8 @@ BuildRequires:	libsoup-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-An integrated file sharing solution for the GNOME Desktop. It uses WebDAV
-and Rendezvous.
+An integrated file sharing solution for the GNOME Desktop. It uses
+WebDAV and Rendezvous.
 
 %description -l pl
 Zintegrowane rozwi±zanie do wspó³dzielenia plików dla ¶rodowiska
