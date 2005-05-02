@@ -2,11 +2,12 @@ Summary:	An integrated file sharing solution for the GNOME Desktop
 Summary(pl):	Zintegrowane rozwi±zanie do wspó³dzielenia plików dla ¶rodowiska GNOME
 Name:		epittance
 Version:	0.3.0
-Release:	0.1
+Release:	0.2.20050502
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://dl.sourceforge.net/elysium-project/%{name}-%{version}.tar.gz
-# Source0-md5:	364e7f59ed0c104b33f9d0e25222962e
+#Source0:	http://dl.sourceforge.net/elysium-project/%{name}-%{version}.tar.gz
+Source0:	%{name}-%{version}.tar.gz
+# Source0-md5:	1dafd9339ce735471f08d5189e812678
 URL:		http://elysium-project.sourceforge.net/epittance/
 BuildRequires:	howl-devel
 BuildRequires:	libgnomeui-devel
@@ -25,9 +26,13 @@ GNOME. U¿ywa WebDAV oraz Rendezvous.
 %setup -q
 
 %build
-CFLAGS="-DGETTEXT_PACKAGE %{rpmcflags}"
-export CFLAGS
+glib-gettextize
+%{__intltoolize}
+autoreconf -i
 %configure
+cd src
+%{__make} EPittance.h
+cd -
 %{__make}
 
 %install
@@ -51,7 +56,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %dir %{_libdir}/epittance-1.0
-%attr(755,root,root) %{_libdir}/epittance-1.0/libepittance-webdav.so
+%attr(755,root,root) %{_libdir}/epittance-1.0/*.so
 %attr(755,root,root) %{_libdir}/epittance-server
 %attr(755,root,root) %{_libdir}/nautilus/extensions-1.0/libepittance-nautilus.so
 %{_libdir}/bonobo/servers/GNOME_EPittance.server
